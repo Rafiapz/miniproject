@@ -1,0 +1,28 @@
+ <div class="main">
+ <div class="registration-form"  >
+        <form action="/editSubmit" method="post">
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="username" name="email" placeholder="Username" value="{{details.email}}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control item" id="password" name="password" placeholder="Password" value="{{details.password}}" required >
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="password" name="fullName" placeholder="Full Name" value="{{details.fullName}}" required pattern="[A-Za-z ]{1,15}">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="phone-number" name="phone" placeholder="Phone Number" value="{{details.phone}}" required pattern="[789][0-9]{9}">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="city" name="city" placeholder="City" value="{{details.city}}" required pattern="[A-Za-z ]{1,15}">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-block create-account">
+            </div>
+        </form>
+        
+    </div>
+    </div>

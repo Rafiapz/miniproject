@@ -1,0 +1,43 @@
+<body style="background-color: rgb(14, 28, 36);">
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <a class="btn btn-warning btn-sm mx-2" href="/back">Back</a>
+            <a class="btn btn-danger btn-sm mx-2" href="/adminLogout">Logout</a>
+        </div>
+        <!-- Title "All Users" -->
+        <div class="text-center">
+            <h1 style="color: white;">All Users</h1>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Username</th> <!-- Adjusted width for Username -->
+                        
+                        <th>Full Name</th>
+                        <th>Mobile Number</th>
+                        <th>City</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each arr}}
+                    <tr>
+                        <td>{{this.email}}</td>
+                        
+                        <td>{{this.fullName}}</td>
+                        <td>{{this.phone}}</td>
+                        <td>{{this.city}}</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm me-2" href="/edit?email={{this.email}}">Edit</a>
+                            <a class="btn btn-danger btn-sm" href="/delete?email={{this.email}}">Delete</a>
+                            
+                        </td>
+                    </tr>
+                    {{/each}}
+                    <!-- Add more user rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

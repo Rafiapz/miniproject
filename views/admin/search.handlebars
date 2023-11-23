@@ -1,0 +1,59 @@
+<body style="background-color: rgb(14, 28, 36);">
+
+    <header class="text-light text-center py-2" style="background-color: rgb(41, 81, 123);">
+        <h1>Welcome, Admin!</h1>
+        <a class="btn btn-warning btn-sm mx-2" href="/back">Back</a>
+        <a href="/adminLogout" class="btn btn-danger btn-sm">Logout</a>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="/Search" method="post">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="search-input" name="query" placeholder="Enter your search query" required>
+                        <div class="input-group-append">
+                            {{!-- <button type="submit" class="btn btn-primary btn-sm">Search</button> --}}
+                            <input type="submit" class="btn btn-primary btn-sm" value="Search">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table container -->
+    <div class="container mt-4">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Username</th> <!-- Adjusted width for Username -->
+                        
+                        <th>Full Name</th>
+                        <th>Mobile Number</th>
+                        <th>City</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each serachResult}}
+                    <tr>
+                        <td>{{this.email}}</td>
+                        
+                        <td>{{this.fullName}}</td>
+                        <td>{{this.phone}}</td>
+                        <td>{{this.city}}</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm me-2" href="/edit?email={{this.email}}">Edit</a>
+                            <a class="btn btn-danger btn-sm" href="/delete?email={{this.email}}">Delete</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                    <!-- Add more user rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
